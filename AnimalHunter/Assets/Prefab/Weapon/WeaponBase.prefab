@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &73342190376462712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73342190376462713}
+  - component: {fileID: 319917583584810476}
+  m_Layer: 0
+  m_Name: WeaponBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73342190376462713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73342190376462712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &319917583584810476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73342190376462712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae068e7fa5546e49add9f836524b07e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackAction: {fileID: 11400000, guid: 53567a6a8154acc41a38131bc16e8522, type: 2}
+  SkillAction: {fileID: 0}
+  AttackBulletPrefab: {fileID: 8646840543344790252, guid: ad508ad05688a8c4abfa80a9b0d17a16,
+    type: 3}
+  WeaponOwner: {fileID: 0}
+  BulletMax: 3
+  BulletCurrent: 0
+  BulletReloadSpeed: 0.5
+  BulletLaunchInfos:
+  - Time: 0.2
+    Angle: 0
+    Offset: {x: 0, y: 1}
+  BulletDamage: 15
+  BulletRange: 0.5
+  BulletSpeed: 0.5
