@@ -12,9 +12,10 @@ public class StateManager : MonoBehaviour
     public float HealthReginDelay = 3;
     public float HealthReginSpeed = 1;
     public float HealthReginAmount = 0.2f;
-
     private float HealthReginTimer;
     private float LastReginTime;
+
+    public float EnergyCurrent;
 
     public CampType campType;
     private void Awake()
@@ -51,6 +52,11 @@ public class StateManager : MonoBehaviour
             Death(damageCauser,damageInstigator);
         }
         HealthReginTimer = Time.time;
+    }
+    public void ChangeEnergy(float amount)
+    {
+        EnergyCurrent += amount;
+        EnergyCurrent = Mathf.Clamp01(EnergyCurrent);
     }
     public void Death(GameObject damageCauser, CharacterManager damageInstigator)
     {

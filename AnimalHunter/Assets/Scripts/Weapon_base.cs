@@ -18,6 +18,7 @@ public class Weapon_base : MonoBehaviour
     public float BulletDamage;
     public float BulletRange;
     public float BulletSpeed;
+    public float BulletGainEnergy;
     public float AIAttackRange;
 
     private Coroutine AttackCoroutine;
@@ -38,10 +39,6 @@ public class Weapon_base : MonoBehaviour
     public bool CanAttack()
     {
         return BulletCurrent >= 1;
-    }
-    public bool CanSkill()
-    {
-        return true;
     }
     public void Attack(Vector3 direction)
     {
@@ -68,7 +65,13 @@ public class Weapon_base : MonoBehaviour
 
                 GameObject bulletObject = Instantiate(AttackBulletPrefab,BulletPosition, BulletRotation);
                 Bullet_Base bullet = bulletObject.GetComponent<Bullet_Base>();
-                bullet.InitialBullet(WeaponOwner, BulletSpeed, BulletRange, BulletDamage);
+                BulletInitVariables variables = new BulletInitVariables();
+                variables.owner = WeaponOwner;
+                variables.bulletSpeed = BulletSpeed;
+                variables.bulletRange = BulletRange;
+                variables.bulletDamage = BulletDamage;
+                variables.bulletEnergy = BulletGainEnergy;
+                bullet.InitialBullet(variables);
 
                 counter++;
             }

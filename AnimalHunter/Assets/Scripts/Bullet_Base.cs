@@ -10,6 +10,7 @@ public class Bullet_Base : MonoBehaviour
     public float BulletSpeed;
     public float BulletRange;
     public float BulletDamage;
+    public float BulletGainEnergy;
     public bool HitWallDestroy;
     public bool HitEnemyDestroy;
 
@@ -19,12 +20,13 @@ public class Bullet_Base : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-    public void InitialBullet(CharacterManager owner, float bulletSpeed, float bulletRange, float bulletDamage)
+    public void InitialBullet(BulletInitVariables variables)
     {
-        Owner = owner;
-        BulletSpeed = bulletSpeed;
-        BulletRange = bulletRange;
-        BulletDamage = bulletDamage;
+        Owner = variables.owner;
+        BulletSpeed = variables.bulletSpeed;
+        BulletRange = variables.bulletRange;
+        BulletDamage = variables.bulletDamage;
+        BulletGainEnergy = variables.bulletEnergy;
     }
     void Update()
     {
@@ -62,6 +64,7 @@ public class Bullet_Base : MonoBehaviour
     public void BulletHitEnemy(StateManager enemyState)
     {
         enemyState.TakeDamage(BulletDamage, gameObject, Owner);
+        Owner.stateManager.ChangeEnergy(BulletGainEnergy);
         if (HitEnemyDestroy)
         {
             DestroyBullet();
@@ -74,4 +77,12 @@ public class Bullet_Base : MonoBehaviour
             DestroyBullet();
         }
     }
+}
+public struct BulletInitVariables
+{
+    public CharacterManager owner;
+    public float bulletSpeed;
+    public float bulletRange;
+    public float bulletDamage;
+    public float bulletEnergy;
 }

@@ -49,6 +49,9 @@ MonoBehaviour:
   BulletSpeed: 0.5
   BulletRange: 0
   BulletDamage: 0
+  BulletGainEnergy: 0.5
+  HitWallDestroy: 0
+  HitEnemyDestroy: 0
 --- !u!54 &7956976230720237113
 Rigidbody:
   m_ObjectHideFlags: 0

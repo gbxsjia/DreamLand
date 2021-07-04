@@ -33,19 +33,28 @@ public class AI_Move : MonoBehaviour
         while (true)
         {
             RayTrace();
+            MoveDirection = Vector3.zero;
             switch (MoveType)
             {
-                case AIMoveType.None:
-                    MoveDirection = Vector3.zero;
+                case AIMoveType.None:                   
                     break;
                 case AIMoveType.Chase:
-                    MD_ChaseMove();
+                    if (TargetObject != null)
+                    {
+                        MD_ChaseMove();
+                    }    
                     break;
                 case AIMoveType.RunAway:
-                    MD_RunAway();
+                    if (TargetObject != null)
+                    {
+                        MD_RunAway();
+                    }
                     break;
                 case AIMoveType.KeepDistance:
-                    MD_KeepDistance(3.5f, 0.5f);
+                    if (TargetObject != null)
+                    {
+                        MD_KeepDistance(3.5f, 0.5f);
+                    }
                     break;
                 case AIMoveType.RandomMove:
                     MD_RandomMove();
@@ -144,11 +153,11 @@ public class AI_Move : MonoBehaviour
                 Vector3 TargetDirection = (TargetObject.transform.position - transform.position).normalized;
                 float currentDistance = Vector3.Distance(TargetObject.transform.position, transform.position);
                 float DotWeight = Vector3.Dot(TargetDirection, RayResults[i].Direction);
-                if (currentDistance > targetDistance+circleRange)
+                if (currentDistance > targetDistance + circleRange)
                 {
                     DotWeight = Mathf.Clamp01(1 - Mathf.Abs(DotWeight - 0.732f));
                 }
-                else if(currentDistance < targetDistance - circleRange)
+                else if (currentDistance < targetDistance - circleRange)
                 {
                     DotWeight = Mathf.Clamp01(1 - Mathf.Abs(DotWeight + 0.732f));
                 }

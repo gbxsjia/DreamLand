@@ -14,6 +14,7 @@ public class AS_KeepDistance : AIState_Base
     {
         base.StateBegin(brain);
         brain.MoveComp.TargetObject = brain.Target;
+        brain.characterManager.FocusTarget = brain.Target.transform;
         brain.MoveComp.MoveType = AIMoveType.KeepDistance;
         brain.characterManager.SetDefaultMoveMode(0);
     }

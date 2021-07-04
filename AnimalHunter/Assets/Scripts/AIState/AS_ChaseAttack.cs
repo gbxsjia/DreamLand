@@ -18,11 +18,14 @@ public class AS_ChaseAttack : AIState_Base
     public override void UpdateFunction()
     {
         base.UpdateFunction();
-        float distance = Vector3.Distance(owner.Target.transform.position, owner.transform.position);
-        if (owner.Target && owner.characterManager.CurrentWeapon && distance < owner.characterManager.CurrentWeapon.AIAttackRange)
+        if (owner.Target)
         {
-            Vector3 attackDirection = owner.Target.transform.position - owner.transform.position;
-            owner.characterManager.Attack(attackDirection);
+            float distance = Vector3.Distance(owner.Target.transform.position, owner.transform.position);
+            if (owner.characterManager.CurrentWeapon && distance < owner.characterManager.CurrentWeapon.AIAttackRange)
+            {
+                Vector3 attackDirection = owner.Target.transform.position - owner.transform.position;
+                owner.characterManager.Attack(attackDirection);
+            }
         }
     }
     public override bool StateCondition(AIBrain brain)

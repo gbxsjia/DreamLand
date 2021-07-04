@@ -19,6 +19,7 @@ public class CharacterManager : MonoBehaviour
 
     public Vector3 ActionDirection;
     public Vector3 MoveDirection;
+    public Transform FocusTarget;
 
     public Action_Base CurrentAction;
 
@@ -70,7 +71,14 @@ public class CharacterManager : MonoBehaviour
             targetRotation = Quaternion.LookRotation(ActionDirection);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, TurnSpeed * Time.deltaTime * 2);
         }
-        else if (MoveDirection != Vector3.zero)
+        else if (FocusTarget != null)
+        {
+            Vector3 direction = FocusTarget.position - transform.position;
+            direction.y = 0;
+            targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, TurnSpeed * Time.deltaTime);
+        }
+        else if (rb.velocity != Vector3.zero)
         {
             targetRotation = Quaternion.LookRotation(rb.velocity);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, TurnSpeed * Time.deltaTime);
@@ -128,8 +136,9 @@ public class CharacterManager : MonoBehaviour
     {
         if (CurrentWeapon != null)
         {
-            if (CurrentAction == null && CurrentWeapon.CanSkill())
+            if (CurrentAction == null && stateManager.EnergyCurrent>=1)
             {
+                stateManager.ChangeEnergy(-1);
                 Action_Base newAction = Instantiate(CurrentWeapon.SkillAction);
                 newAction.IntializeAction(this, direction);
                 CurrentWeapon.Skill(direction);
