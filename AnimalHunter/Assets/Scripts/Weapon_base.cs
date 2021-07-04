@@ -18,6 +18,7 @@ public class Weapon_base : MonoBehaviour
     public float BulletDamage;
     public float BulletRange;
     public float BulletSpeed;
+    public float AIAttackRange;
 
     private Coroutine AttackCoroutine;
 

@@ -18,7 +18,8 @@ public class AS_ChaseAttack : AIState_Base
     public override void UpdateFunction()
     {
         base.UpdateFunction();
-        if (owner.Target && owner.characterManager.CurrentWeapon)
+        float distance = Vector3.Distance(owner.Target.transform.position, owner.transform.position);
+        if (owner.Target && owner.characterManager.CurrentWeapon && distance < owner.characterManager.CurrentWeapon.AIAttackRange)
         {
             Vector3 attackDirection = owner.Target.transform.position - owner.transform.position;
             owner.characterManager.Attack(attackDirection);

@@ -14,6 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 73342190376462713, guid: 950f2a2ffc0331640977232765aef912,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73342190376462713, guid: 950f2a2ffc0331640977232765aef912,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -29,6 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 73342190376462713, guid: 950f2a2ffc0331640977232765aef912,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 73342190376462713, guid: 950f2a2ffc0331640977232765aef912,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -40,16 +50,6 @@ PrefabInstance:
     - target: {fileID: 73342190376462713, guid: 950f2a2ffc0331640977232765aef912,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 73342190376462713, guid: 950f2a2ffc0331640977232765aef912,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 73342190376462713, guid: 950f2a2ffc0331640977232765aef912,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73342190376462713, guid: 950f2a2ffc0331640977232765aef912,
@@ -69,13 +69,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
         type: 3}
-      propertyPath: BulletLaunchInfos.Array.size
-      value: 1
+      propertyPath: BulletRange
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
+        type: 3}
+      propertyPath: BulletSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
         type: 3}
       propertyPath: WeaponOwner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
+        type: 3}
+      propertyPath: BulletDamage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
+        type: 3}
+      propertyPath: AIAttackRange
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
+        type: 3}
+      propertyPath: AttackBulletPrefab
+      value: 
+      objectReference: {fileID: 6540369691931251785, guid: db8dddb3a8dc95948bfdc28719096a05,
+        type: 3}
+    - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
+        type: 3}
+      propertyPath: BulletLaunchInfos.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
         type: 3}
@@ -86,27 +112,6 @@ PrefabInstance:
         type: 3}
       propertyPath: BulletLaunchInfos.Array.data[0].Offset.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
-        type: 3}
-      propertyPath: AttackBulletPrefab
-      value: 
-      objectReference: {fileID: 6540369691931251785, guid: db8dddb3a8dc95948bfdc28719096a05,
-        type: 3}
-    - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
-        type: 3}
-      propertyPath: BulletSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
-        type: 3}
-      propertyPath: BulletRange
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 319917583584810476, guid: 950f2a2ffc0331640977232765aef912,
-        type: 3}
-      propertyPath: BulletDamage
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 950f2a2ffc0331640977232765aef912, type: 3}

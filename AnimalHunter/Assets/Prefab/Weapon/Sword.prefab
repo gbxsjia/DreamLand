@@ -149,6 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 319917583584810476, guid: dcb297be6f797d7409e59b8f5394d95c,
         type: 3}
+      propertyPath: AIAttackRange
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 319917583584810476, guid: dcb297be6f797d7409e59b8f5394d95c,
+        type: 3}
       propertyPath: BulletCurrent
       value: 3
       objectReference: {fileID: 0}
